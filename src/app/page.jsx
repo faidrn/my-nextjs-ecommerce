@@ -10,9 +10,9 @@ export default function HomePage() {
       >
         <Navbar />
       </header>
-      {/*<main>
+      <main>
         <ProductGrid />
-      </main>*/}
+      </main>
     </div>
   );
 }
