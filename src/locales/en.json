@@ -1,0 +1,60 @@
+{
+  "title": "Weather App",
+  "search": "Search location...",
+  "searchButton": "Search",
+  "currentWeather": "Current Weather",
+  "forecast": "7-Day Forecast",
+  "feelsLike": "Feels like",
+  "humidity": "Humidity",
+  "windSpeed": "Wind Speed",
+  "pressure": "Pressure",
+  "visibility": "Visibility",
+  "uvIndex": "UV Index",
+  "sunrise": "Sunrise",
+  "sunset": "Sunset",
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "colorScheme": "Color Scheme",
+  "darkMode": "Dark Mode",
+  "lightMode": "Light Mode",
+  "days": {
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "wednesday": "Wed",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat",
+    "sunday": "Sun"
+  },
+  "status": {
+    "loading": "Loading...",
+    "error": "Error loading weather data",
+    "noResults": "No results found"
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "generic": "Could not fetch weather data.",
+    "network": "Connection error. Check your internet.",
+    "location_not_found": "Location not found.",
+    "retry_button": "Retry"
+  },
+  "weatherConditions": {
+    "clearSky": "Clear Sky",
+    "mainlyClear": "Mainly Clear",
+    "partlyCloudy": "Partly Cloudy",
+    "overcast": "Overcast",
+    "fog": "Fog",
+    "drizzle": "Drizzle",
+    "rain": "Rain",
+    "snow": "Snow",
+    "thunderstorm": "Thunderstorm"
+  },
+  "themes": {
+    "ocean": "Ocean",
+    "sunset": "Sunset",
+    "forest": "Forest",
+    "lavender": "Lavender",
+    "default": "Default"
+  }
+}

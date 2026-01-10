@@ -1,0 +1,60 @@
+{
+  "title": "App del Clima",
+  "search": "Buscar ubicación...",
+  "searchButton": "Buscar",
+  "currentWeather": "Clima Actual",
+  "forecast": "Pronóstico 7 Días",
+  "feelsLike": "Sensación térmica",
+  "humidity": "Humedad",
+  "windSpeed": "Velocidad del viento",
+  "pressure": "Presión",
+  "visibility": "Visibilidad",
+  "uvIndex": "Índice UV",
+  "sunrise": "Amanecer",
+  "sunset": "Atardecer",
+  "settings": "Configuración",
+  "language": "Idioma",
+  "theme": "Tema",
+  "colorScheme": "Esquema de color",
+  "darkMode": "Modo oscuro",
+  "lightMode": "Modo claro",
+  "days": {
+    "monday": "Lun",
+    "tuesday": "Mar",
+    "wednesday": "Mié",
+    "thursday": "Jue",
+    "friday": "Vie",
+    "saturday": "Sáb",
+    "sunday": "Dom"
+  },
+  "status": {
+    "loading": "Cargando...",
+    "error": "Error al cargar datos del clima",
+    "noResults": "No se encontraron resultados"
+  },
+  "errors": {
+    "title": "Algo salió mal",
+    "generic": "No se pudo obtener la información del clima.",
+    "network": "Error de conexión. Verifica tu internet.",
+    "location_not_found": "No encontramos esa ubicación.",
+    "retry_button": "Reintentar"
+  },
+  "weatherConditions": {
+    "clearSky": "Cielo despejado",
+    "mainlyClear": "Mayormente despejado",
+    "partlyCloudy": "Parcialmente nublado",
+    "overcast": "Nublado",
+    "fog": "Niebla",
+    "drizzle": "Llovizna",
+    "rain": "Lluvia",
+    "snow": "Nieve",
+    "thunderstorm": "Tormenta"
+  },
+  "themes": {
+    "ocean": "Océano",
+    "sunset": "Atardecer",
+    "forest": "Bosque",
+    "lavender": "Lavanda",
+    "default": "Predeterminado"
+  }
+}

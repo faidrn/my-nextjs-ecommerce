@@ -1,8 +1,17 @@
 import Link from "next/link";
-import { ShoppingCart, Moon, Sun, Globe } from "lucide-react";
+import { ShoppingCart, Moon, Sun, Globe, Shield } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { Button } from "./ui/Button";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+ } from "@/components/ui/DropdownMenu";
 
 
-const Navbar = () => {
+const Navbar = ({ onCartClick, onHomeClick, onAdminClick }) => {
+const isAuthenticated = false;
   return (
     <nav
       className="flex items-center justify-between gap-6 px-4 py-4 md:px-8"
@@ -28,7 +37,9 @@ const Navbar = () => {
       <ul
         className="flex justify-center items-center gap-4"
       >
-        <li>
+        <li
+          className="p-1.5 rounded-md hover:bg-gray-200"
+        >
           <Link href="/products">
             <Globe 
               className="h-5 w-5"
@@ -36,33 +47,49 @@ const Navbar = () => {
             <div
               className="bg-blue-600 text-white font-bold rounded-2xl px-1 text-[11px] items-center justify-center flex absolute left-2 top-3"
             >
-              <span
+              {/*<span
               >
                 EN
               </span>
-              {/*<span>ES</span>*/}
+              <span>ES</span>*/}
             </div>
           </Link>
         </li>
-        <li>
+        <li
+          className="p-1.5 rounded-md hover:bg-gray-200"
+        >
           <Link href="/products">
             <Sun 
               className="h-5 w-5"
             />
           </Link>
         </li>
-        <li>
+        <li
+          className="p-1.5 rounded-md hover:bg-gray-200"
+        >
           <Link href="/products">
             <Moon 
               className="h-5 w-5"
             />
           </Link>
         </li>
-        <li>
+        <li
+          className="p-1.5 rounded-md hover:bg-gray-200"
+        >
           <Link href="/products">
             <ShoppingCart 
               className="h-5 w-5"
             />
+          </Link>
+        </li>
+        <li
+          className="p-1.5 rounded-md hover:bg-gray-200"
+        >
+          <Link href="/products">
+            <Shield 
+              className="h-5 w-5"
+            />
+            <span className="sr-only">Admin Panel</span>
           </Link>
         </li>
       </ul>
