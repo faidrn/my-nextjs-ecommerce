@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import { ShoppingCart, Moon, Sun, Globe, Shield } from "lucide-react";
+import { ShoppingCart, Globe, Shield } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Button } from "./ui/Button";
 import { 
@@ -11,6 +12,7 @@ import {
 
 
 const Navbar = ({ onCartClick, onHomeClick, onAdminClick }) => {
+  
 const isAuthenticated = false;
   return (
     <nav
@@ -53,24 +55,6 @@ const isAuthenticated = false;
               </span>
               <span>ES</span>*/}
             </div>
-          </Link>
-        </li>
-        <li
-          className="p-1.5 rounded-md hover:bg-gray-200"
-        >
-          <Link href="/products">
-            <Sun 
-              className="h-5 w-5"
-            />
-          </Link>
-        </li>
-        <li
-          className="p-1.5 rounded-md hover:bg-gray-200"
-        >
-          <Link href="/products">
-            <Moon 
-              className="h-5 w-5"
-            />
           </Link>
         </li>
         <li
