@@ -1,52 +1,48 @@
-const ProductGrid = () => {
+"use client";
+import React from "react";
+import ProductCard from './ProductCard';
+import { useCart } from "@/context/CartContext";
+import { toast } from "sonner";
+
+
+const ProductGrid = ({ products, onProductClick }) => {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = (product) => {
+        addToCart({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            images: product.images,
+        });
+
+        toast.success('addedToCart');
+    };
+
+    if (!products || products.length === 0) {
+        return (
+            <div
+                className="flex h-64 items-center justify-center text-gray-500 dark:text-gray-400"
+            >
+                No products found
+            </div>
+        );
+    }
+
+
     return (
-        <section
-            className="h-screen bg-amber-700"
+        <div
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
-            <div>Product Grid</div>
-            <br />
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates molestias, vitae neque voluptatum, esse fugit nesciunt sit explicabo enim quis exercitationem repellat eius nobis, quaerat beatae ab inventore. Ratione.</p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-            <br />
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates molestias, vitae neque voluptatum, esse fugit nesciunt sit explicabo enim quis exercitationem repellat eius nobis, quaerat beatae ab inventore. Ratione.</p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-            <br />
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptates molestias, vitae neque voluptatum, esse fugit nesciunt sit explicabo enim quis exercitationem repellat eius nobis, quaerat beatae ab inventore. Ratione.</p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, dolor possimus. Minima vel vero ab officiis assumenda et. Amet molestias tenetur rem veniam itaque assumenda laborum dolor excepturi voluptas voluptatum.
-            </p>
-        </section>
+            {products.map((product) => (
+                <ProductCard 
+                    key={product.id}
+                    product={product}
+                    onAddToCart={() => handleAddToCart(product)}
+                    onClick={() => onProductClick(product)}
+                />
+            ))}
+        </div>    
     );
 };
 

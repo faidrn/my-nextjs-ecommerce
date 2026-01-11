@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import ProductGrid from "@/components/product/ProductGrid";
+import { CartProvider } from "@/context/CartContext";
 
 
 export default function HomePage() {
@@ -11,7 +12,9 @@ export default function HomePage() {
         <Navbar />
       </header>
       <main>
-        <ProductGrid />
+        <CartProvider>
+          <ProductGrid />
+        </CartProvider>
       </main>
     </div>
   );

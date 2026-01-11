@@ -1,6 +1,8 @@
 import { ShoppingCart } from "lucide-react";
 import { Card, CardContent, CardFooter } from "../ui/Card";
 import { Button } from "../ui/Button";
+
+
 const ProductCard = ({
     product, 
     onAddToCart,
