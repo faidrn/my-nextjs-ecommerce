@@ -94,7 +94,7 @@ const ProductFilters = ({ categories, onFilterChange, maxPrice }) => {
 
     return (
         <div
-            className="space-y-6 rounded-lg border bg-white p-6 dark:bg-gray-950"
+            className="space-y-6 rounded-lg border bg-white p-6 border-gray-200 dark:bg-gray-950"
         >
             <div
                 className="flex items-center justify-between"
@@ -131,7 +131,7 @@ const ProductFilters = ({ categories, onFilterChange, maxPrice }) => {
                 </Label>
                 <div className="relative">
                     <Search 
-                        className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1-/2 text-gray-400"
+                        className="absolute left-3 top-1/3 h-4 w-4 -translate-y-1-/2 text-gray-400"
                     />
                     <Input 
                         id="search-title"
@@ -140,7 +140,7 @@ const ProductFilters = ({ categories, onFilterChange, maxPrice }) => {
                         onChange={(e) => 
                             handleTitleChange(e.target.value)
                         }
-                        className="pl-9"
+                        className="pl-9 bg-gray-100 border-none"
                     />
                 </div>
             </div>
@@ -154,13 +154,13 @@ const ProductFilters = ({ categories, onFilterChange, maxPrice }) => {
                     value={filters.categoryId?.toString() || 'all'}
                     onValueChange={handleCategoryChange}
                 >
-                    <SelectTrigger id="category-filter">
+                    <SelectTrigger id="category-filter" className="bg-gray-100 border-none font-bold">
                         <SelectValue 
                             placeholder={'All categories'}
                         />
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value='all'>
+                        <SelectItem value='all' className="bg-gray-100">
                             {'All categories'}
                         </SelectItem>
                         {categories.map((category) => {

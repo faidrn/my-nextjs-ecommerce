@@ -16,6 +16,7 @@ function AppContent () {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState([]);
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   const [filters, setFilters] = useState({
     title: "",
@@ -82,7 +83,7 @@ function AppContent () {
         return false;
       }
 
-      if (product.price < price.priceRangeMin 
+      if (product.price < filters.priceRangeMin 
         || product.price > filters.priceRangeMax){
           return false;
       }
@@ -151,6 +152,34 @@ function AppContent () {
             onBack={() => setSelectedProduct(null)}
             onAddToCart={() => handleAddToCart(selectedProduct)}
           />
+        ): (
+            <div className="container mx-auto px-4 py-8">
+              <div className="flex gap-6">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="fixed bottom-4 right-4 z-40 lg:hidden"
+                  onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
+                >
+                  {isMobileFilterOpen ? <X /> : <Menu />}
+                </Button>
+
+                <aside className="hidden w-80 lg:block">
+                  <ProductFilters
+                    categories={categories}
+                    onFilterChange={setFilters}
+                    maxPrice={maxPrice}
+                  />
+                </aside>
+
+                <div className="flex-1">
+                  <ProductGrid
+                    products={filteredProducts}
+                    onProductClick={setSelectedProduct}
+                  />
+                </div>
+              </div>
+            </div>
         )}
       </main>
     </div>
