@@ -8,6 +8,7 @@ import ProductFilters from "@/components/product/ProductFilters";
 import { toast } from "sonner";
 import { Loader, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { Footer } from "@/components/Footer";
 
 
 function AppContent () {
@@ -182,6 +183,8 @@ function AppContent () {
             </div>
         )}
       </main>
+
+       <Footer />
     </div>
   );
 }
