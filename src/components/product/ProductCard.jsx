@@ -15,7 +15,7 @@ const ProductCard = ({
 
     return (
         <Card
-            className="group border-gray-200 cursor-pointer overflow-hidden transition-all hover:shadow-lg dark:bg-gray-800"
+            className="group cursor-pointer overflow-hidden transition-all hover:shadow-lg dark:bg-gray-800"
             onClick={onClick}
         >
             <div
@@ -56,7 +56,7 @@ const ProductCard = ({
             >
                 <Button
                     onClick={handleAddToCart}
-                    className="w-full bg-black text-white"
+                    className="w-full"
                     size="sm"
                 >
                     <ShoppingCart 

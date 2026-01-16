@@ -140,7 +140,7 @@ const ProductFilters = ({ categories, onFilterChange, maxPrice }) => {
                         onChange={(e) => 
                             handleTitleChange(e.target.value)
                         }
-                        className="pl-9 bg-gray-100 border-none"
+                        className="pl-9"
                     />
                 </div>
             </div>
