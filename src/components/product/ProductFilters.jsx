@@ -38,7 +38,7 @@ const ProductFilters = ({ categories, onFilterChange, maxPrice }) => {
     };
 
     const handleCategoryChange = (value) => {
-        const caregoryId = value === 'all' ? null : parseInt(value);
+        const categoryId = value === 'all' ? null : parseInt(value);
         const newFilters = { ...filters, categoryId };
         setFilters(newFilters);
         onFilterChange(newFilters);
@@ -154,23 +154,23 @@ const ProductFilters = ({ categories, onFilterChange, maxPrice }) => {
                     value={filters.categoryId?.toString() || 'all'}
                     onValueChange={handleCategoryChange}
                 >
-                    <SelectTrigger id="category-filter" className="bg-gray-100 border-none font-bold">
+                    <SelectTrigger id="category-filter">
                         <SelectValue 
                             placeholder={'All categories'}
                         />
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value='all' className="bg-gray-100">
+                        <SelectItem value='all'>
                             {'All categories'}
                         </SelectItem>
-                        {categories.map((category) => {
+                        {categories.map((category) => (
                             <SelectItem
                                 key={category.id}
                                 value={category.id.toString()}
                             >
                                 {category.name}
                             </SelectItem>
-                        })}
+                        ))}
                     </SelectContent>
                 </Select>
             </div>

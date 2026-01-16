@@ -22,7 +22,7 @@ function AppContent () {
   const [filters, setFilters] = useState({
     title: "",
     categoryId: null,
-    minPricce: 0,
+    minPrice: 0,
     maxPrice: 1000,
     priceRangeMin: 0,
     priceRangeMax: 1000,
@@ -89,7 +89,7 @@ function AppContent () {
           return false;
       }
 
-      if (filters.minPricce > 0 && product.price < filters.minPricce) {
+      if (filters.minPrice > 0 && product.price < filters.minPrice) {
         return false;
       }
 
