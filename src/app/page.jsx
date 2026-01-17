@@ -9,14 +9,19 @@ import { toast } from "sonner";
 import { Loader, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Footer } from "@/components/Footer";
+import CartSidebar from "@/components/CartSidebar";
+import ProductCard from "@/components/product/ProductCard";
+import { useCart } from "@/context/CartContext";
+import { Toaster } from "@/components/ui/Sonner";
 
 
 function AppContent () {
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [categories, setCategories] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   const [filters, setFilters] = useState({
@@ -27,6 +32,8 @@ function AppContent () {
     priceRangeMin: 0,
     priceRangeMax: 1000,
   });
+
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -125,6 +132,7 @@ function AppContent () {
         className="sticky top-0 z-50 w-full border-b border-b-gray-300 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/60 dark:bg-gray-950/95 dark:supports-backdrop-filter:bg-gray-950/60"
       >
         <Navbar 
+          onCartClick={() => setIsCartOpen(true)}
           onHomeClick={() => setSelectedProduct(null)}
         />
       </header>
@@ -185,6 +193,11 @@ function AppContent () {
       </main>
 
        <Footer />
+       <CartSidebar 
+          isOpen={isCartOpen} 
+          onClose={() => setIsCartOpen(false)} 
+       />
+       <Toaster position="bottom-right" />
     </div>
   );
 }

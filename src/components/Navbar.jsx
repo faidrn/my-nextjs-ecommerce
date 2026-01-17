@@ -9,9 +9,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
  } from "@/components/ui/DropdownMenu";
+ import { useCart } from "@/context/CartContext";
 
 
 const Navbar = ({ onCartClick, onHomeClick, onAdminClick }) => {
+  const { totalItems } = useCart();
   
 const isAuthenticated = false;
   return (
@@ -60,11 +62,36 @@ const isAuthenticated = false;
         <li
           className="p-1.5 rounded-md hover:bg-gray-200"
         >
-          <Link href="/products">
+          {/*<Link 
+            href="#"
+            onClick={onCartClick}
+            className="relative"
+          >
             <ShoppingCart 
               className="h-5 w-5"
             />
-          </Link>
+            {totalItems > 0 && (
+              <span className="absolute -right-1 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-xs text-white">
+                {totalItems}
+              </span>
+            )}
+            <span className="sr-only">{'cart'}</span>
+          </Link>*/}
+          {/* Cart Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onCartClick}
+            className="relative"
+          >
+            <ShoppingCart className="h-5 w-5" />
+            {totalItems > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs text-white">
+                {totalItems}
+              </span>
+            )}
+            <span className="sr-only">{'cart'}</span>
+          </Button>
         </li>
         <li
           className="p-1.5 rounded-md hover:bg-gray-200"
