@@ -62,21 +62,6 @@ const isAuthenticated = false;
         <li
           className="p-1.5 rounded-md hover:bg-gray-200"
         >
-          {/*<Link 
-            href="#"
-            onClick={onCartClick}
-            className="relative"
-          >
-            <ShoppingCart 
-              className="h-5 w-5"
-            />
-            {totalItems > 0 && (
-              <span className="absolute -right-1 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-xs text-white">
-                {totalItems}
-              </span>
-            )}
-            <span className="sr-only">{'cart'}</span>
-          </Link>*/}
           {/* Cart Button */}
           <Button
             variant="ghost"
