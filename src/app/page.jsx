@@ -10,9 +10,12 @@ import { Loader, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Footer } from "@/components/Footer";
 import CartSidebar from "@/components/CartSidebar";
-import ProductCard from "@/components/product/ProductCard";
-import { useCart } from "@/context/CartContext";
+//import ProductCard from "@/components/product/ProductCard";
+//import { useCart } from "@/context/CartContext";
 import { Toaster } from "@/components/ui/Sonner";
+import { AuthProvider, useAuth  } from '@/context/AuthContext';
+import { Login } from '@/components/Login';
+import { AdminPanel  } from '@/components/AdminPanel ';
 
 
 function AppContent () {
@@ -23,6 +26,8 @@ function AppContent () {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isAdminPanelOpen, setIsAdminPanelOpen] = useState(false);
 
   const [filters, setFilters] = useState({
     title: "",
@@ -33,7 +38,8 @@ function AppContent () {
     priceRangeMax: 1000,
   });
 
-  const { addToCart } = useCart();
+  //const { addToCart } = useCart();
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -121,8 +127,22 @@ function AppContent () {
       price: product.price,
       images: product.images,
     });
-    toast.success("addedToCart");
+    toast.success("Added to cart");
   };
+
+  const handleAdminClick = () => {
+    if (isAuthenticated) {
+      setIsAdminPanelOpen(true);
+    } else {
+      setIsLoginOpen(true);
+    }
+  };
+
+  useEffect(() => {
+    if (isAuthenticated && !isAdminPanelOpen) {
+      setIsAdminPanelOpen(true);
+    }
+  }, [isAuthenticated, isAdminPanelOpen]);
 
   return (
     <div
@@ -134,6 +154,7 @@ function AppContent () {
         <Navbar 
           onCartClick={() => setIsCartOpen(true)}
           onHomeClick={() => setSelectedProduct(null)}
+          onAdminClick={handleAdminClick}
         />
       </header>
       <main
@@ -197,6 +218,14 @@ function AppContent () {
           isOpen={isCartOpen} 
           onClose={() => setIsCartOpen(false)} 
        />
+       <Login 
+          isOpen={isLoginOpen} 
+          onClose={() => setIsLoginOpen(false)} 
+       />
+        <AdminPanel
+          isOpen={isAdminPanelOpen}
+          onClose={() => setIsAdminPanelOpen(false)}
+        />
        <Toaster position="bottom-right" />
     </div>
   );
@@ -205,8 +234,10 @@ function AppContent () {
 
 export default function HomePage() {
   return (
-    <CartProvider>
-      <AppContent />
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <AppContent />
+      </CartProvider>
+    </AuthProvider>
   );
 }
