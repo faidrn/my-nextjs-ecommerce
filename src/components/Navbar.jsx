@@ -1,9 +1,6 @@
 "use client";
-import Link from "next/link";
-import { ShoppingCart, Globe, Shield } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { ShoppingCart, Shield } from "lucide-react";
 import { Button } from "./ui/Button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/DropdownMenu";
 import { useCart } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
 
@@ -29,24 +26,6 @@ const Navbar = ({ onCartClick, onHomeClick, onAdminClick }) => {
       <ul
         className="flex justify-center items-center gap-4"
       >
-        <li
-          className="p-1.5 rounded-md hover:bg-gray-200"
-        >
-          <Link href="/products">
-            <Globe 
-              className="h-5 w-5"
-            />
-            <div
-              className="bg-blue-600 text-white font-bold rounded-2xl px-1 text-[11px] items-center justify-center flex absolute left-2 top-3"
-            >
-              {/*<span
-              >
-                EN
-              </span>
-              <span>ES</span>*/}
-            </div>
-          </Link>
-        </li>
         <li>
           {/* Cart Button */}
           <Button

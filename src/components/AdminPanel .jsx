@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui/Button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
-//import { ProductsManagement } from './admin/ProductsManagement';
-//import { CategoriesManagement } from './admin/CategoriesManagement';
-//import { UsersManagement } from './admin/UsersManagement';
+import { ProductsManagement } from '@/components/admin/ProductsManagement';
+import { CategoriesManagement } from '@/components/admin/CategoriesManagement';
+import { UsersManagement } from '@/components/admin/UsersManagement';
 import { Shield, X, LogOut } from 'lucide-react';
 
 
@@ -71,18 +71,15 @@ export const AdminPanel = ({ isOpen, onClose }) => {
             </TabsList>
 
             <TabsContent value="products" className="mt-6">
-              {/*<ProductsManagement />*/}
-              {'Aqui va el products management'}
+              <ProductsManagement />
             </TabsContent>
 
             <TabsContent value="categories" className="mt-6">
-              {/*<CategoriesManagement />*/}
-              {'Aqui va el categories management'}
+              <CategoriesManagement />
             </TabsContent>
 
             <TabsContent value="users" className="mt-6">
-              {/*<UsersManagement />*/}
-              {'Aqui va el users management'}
+              <UsersManagement />
             </TabsContent>
           </Tabs>
         </div>

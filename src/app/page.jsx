@@ -138,11 +138,11 @@ function AppContent () {
     }
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (isAuthenticated && !isAdminPanelOpen) {
       setIsAdminPanelOpen(true);
     }
-  }, [isAuthenticated, isAdminPanelOpen]);
+  }, [isAuthenticated, isAdminPanelOpen]);*/
 
   return (
     <div
