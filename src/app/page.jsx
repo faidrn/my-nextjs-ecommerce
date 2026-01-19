@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/Button";
 import { Footer } from "@/components/Footer";
 import CartSidebar from "@/components/CartSidebar";
 //import ProductCard from "@/components/product/ProductCard";
-//import { useCart } from "@/context/CartContext";
+import { useCart } from "@/context/CartContext";
 import { Toaster } from "@/components/ui/Sonner";
 import { AuthProvider, useAuth  } from '@/context/AuthContext';
 import { Login } from '@/components/Login';
@@ -38,7 +38,7 @@ function AppContent () {
     priceRangeMax: 1000,
   });
 
-  //const { addToCart } = useCart();
+  const { addToCart } = useCart();
   const { isAuthenticated } = useAuth();
 
   useEffect(() => {
@@ -121,7 +121,7 @@ function AppContent () {
   }, [products]);
 
   const handleAddToCart = (product) => {
-    handleAddToCart({
+    addToCart({
       id: product.id,
       title: product.title,
       price: product.price,
