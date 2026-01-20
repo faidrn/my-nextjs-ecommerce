@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Next.js E-commerce
 
-## Getting Started
+**My Next.js E-commerce** is an e-commerce application built with **Next.js** and **React**, featuring modern functionalities such as a shopping cart, product filters, and an admin panel to manage users, products, and categories.
 
-First, run the development server:
+---
 
+## Table of Contents
+
+- [Features](#features)  
+- [Technologies](#technologies)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Project Structure](#project-structure)  
+- [Contributing](#contributing)  
+- [License](#license)
+
+---
+
+## Features
+
+- Product catalog with filters and search functionality.  
+- Product detail pages with add-to-cart functionality.  
+- Global cart management using React Context API.  
+- Admin panel to manage:  
+  - Products  
+  - Categories  
+  - Users  
+- Responsive and modern design.  
+- Support for multiple themes and languages.
+
+---
+
+## Technologies
+
+- **Next.js** – React framework for web applications.  
+- **React** – Library for building user interfaces.  
+- **Context API** – Global state management (cart, theme, language, authentication).  
+- **Tailwind CSS** – Utility-first CSS framework.  
+- **Netlify** – For deploying the frontend.
+
+---
+
+## Installation
+
+1. Clone the repository:  
+```bash
+git clone https://github.com/faidrn/my-nextjs-ecommerce.git
+```
+
+2. Enter the project folder:
+```bash
+cd my-nextjs-ecommerce
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Run the application in development mode:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser at <dev>http://localhost:3000</dev>.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Browse the store and add products to your cart.
+* Access the Admin Panel to manage products, categories, and users (authentication required).
+* Configure theme and language using the controls available in the navigation bar.
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+my-nextjs-ecommerce/
+│
+├─ src/
+│  ├─ app/                   # Main pages
+│  ├─ components/            # UI and functional components
+│  │  ├─ product/            # ProductCard, ProductDetail, ProductGrid
+│  │  ├─ admin/              # Admin panel components
+│  │  └─ ui/                 # Reusable UI components
+│  ├─ context/               # Contexts (Cart, Theme, Language, Auth)
+│
+├─ public/                   # Static assets (images, icons)
+├─ package.json               # Dependencies and scripts
+└─ README.md
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
+Contributions are welcome! To collaborate:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Fork the repository.
+2. Create a new branch:
 
-## Deploy on Vercel
+```bash
+git checkout -b feature/your-feature-name
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Make your changes and commit:
+```bash
+git commit -m "feat: description of the feature"
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Push your branch and open a pull request.
+
+## License
+This project is licensed under the **MIT License**.
+
+## Author
+FAID – [GitHub](https://github.com/faidrn)
