@@ -1,117 +1,139 @@
-# My Next.js E-commerce
+# 🛒 My Next.js Ecommerce
 
-**My Next.js E-commerce** is an e-commerce application built with **Next.js** and **React**, featuring modern functionalities such as a shopping cart, product filters, and an admin panel to manage users, products, and categories.
+A modern **ecommerce web application built with Next.js** that includes a full shopping experience: product catalog, filters, cart, authentication, and checkout flow. This project is designed both as a **realistic ecommerce demo** and as a **learning project** showcasing best practices with modern frontend tools.
 
----
-
-## Table of Contents
-
-- [Features](#features)  
-- [Technologies](#technologies)  
-- [Installation](#installation)  
-- [Usage](#usage)  
-- [Project Structure](#project-structure)  
-- [Contributing](#contributing)  
-- [License](#license)
+🔗 **Live Demo:** https://my-nextjs-ecommerce.netlify.app/
 
 ---
 
-## Features
+## ✨ Key Features
 
-- Product catalog with filters and search functionality.  
-- Product detail pages with add-to-cart functionality.  
-- Global cart management using React Context API.  
-- Admin panel to manage:  
-  - Products  
-  - Categories  
-  - Users  
-- Responsive and modern design.  
-- Support for multiple themes and languages.
+- 🛍️ Product catalog with categories and filters
+- 🔎 Product detail pages
+- 🛒 Shopping cart (add, remove, update quantities)
+- 👤 User authentication
+- 💳 Checkout flow
+- 🧑‍💼 Admin-style product management (UI-level)
+- ⚡ Built with performance and scalability in mind
+
+![](https://raw.githubusercontent.com/faidrn/my-portfolio/refs/heads/main/public/images/blog/my-nextjs-ecommerce/homepage.png)
+---
+
+## 🧪 Tech Stack
+
+- **Next.js** – React framework for production
+- **React** – UI development
+- **TypeScript / JavaScript** – Application logic
+- **CSS / Tailwind (if applicable)** – Styling
+- **Platzi Fake Store API** – Product and user data
+
+🔗 API Reference: https://fakeapi.platzi.com/en
 
 ---
 
-## Technologies
+## 🚀 Live Preview
 
-- **Next.js** – React framework for web applications.  
-- **React** – Library for building user interfaces.  
-- **Context API** – Global state management (cart, theme, language, authentication).  
-- **Tailwind CSS** – Utility-first CSS framework.  
-- **Netlify** – For deploying the frontend.
+You can try the application here:
 
+👉 **https://my-nextjs-ecommerce.netlify.app/**
+
+
+![](https://raw.githubusercontent.com/faidrn/my-portfolio/refs/heads/main/public/images/blog/my-nextjs-ecommerce/product-listing.png)
 ---
 
-## Installation
+## 🔐 Authentication Flow
 
-1. Clone the repository:  
-```bash
-git clone https://github.com/faidrn/my-nextjs-ecommerce.git
-```
+The application supports **user authentication** using the Platzi Fake Store API.
 
-2. Enter the project folder:
-```bash
-cd my-nextjs-ecommerce
-```
+### How it works:
+1. User navigates to the login page
+2. Credentials are sent to the API
+3. On success, a token/session is stored
+4. Authenticated users can proceed to checkout
 
-3. Install dependencies:
 
-```bash
-npm install
-# or
-yarn install
-```
+![](https://raw.githubusercontent.com/faidrn/my-portfolio/refs/heads/main/public/images/blog/my-nextjs-ecommerce/admin-dashboard.png)
+---
 
-4. Run the application in development mode:
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 🛒 Checkout Flow
 
-5. Open your browser at <dev>http://localhost:3000</dev>.
+The checkout process follows a simple and clear flow:
 
-## Usage
+1. User adds products to the cart
+2. Cart page shows selected items and total price
+3. Authenticated users can continue to checkout
+4. Order summary is displayed before confirmation
 
-* Browse the store and add products to your cart.
-* Access the Admin Panel to manage products, categories, and users (authentication required).
-* Configure theme and language using the controls available in the navigation bar.
+![](https://raw.githubusercontent.com/faidrn/my-portfolio/refs/heads/main/public/images/blog/my-nextjs-ecommerce/cart.png)
+---
 
-## Project Structure
+## 📦 Project Structure
 
 ```
 my-nextjs-ecommerce/
-│
-├─ src/
-│  ├─ app/                   # Main pages
-│  ├─ components/            # UI and functional components
-│  │  ├─ product/            # ProductCard, ProductDetail, ProductGrid
-│  │  ├─ admin/              # Admin panel components
-│  │  └─ ui/                 # Reusable UI components
-│  ├─ context/               # Contexts (Cart, Theme, Language, Auth)
-│
-├─ public/                   # Static assets (images, icons)
-├─ package.json               # Dependencies and scripts
-└─ README.md
+├── components/    # Reusable UI components
+├── pages/         # Next.js pages and routes
+├── services/      # API and data handling
+├── styles/        # Global and component styles
+├── utils/         # Helper functions
+└── public/        # Static assets
 ```
 
-## Contributing
-Contributions are welcome! To collaborate:
+---
 
-1. Fork the repository.
-2. Create a new branch:
+## 🛠️ Installation & Local Development
+
+Clone the repository:
 
 ```bash
-git checkout -b feature/your-feature-name
+git clone https://github.com/faidrn/my-nextjs-ecommerce.git
+cd my-nextjs-ecommerce
 ```
 
-3. Make your changes and commit:
+Install dependencies:
+
 ```bash
-git commit -m "feat: description of the feature"
+npm install
 ```
 
-4. Push your branch and open a pull request.
+Run the development server:
 
-## License
-This project is licensed under the **MIT License**.
+```bash
+npm run dev
+```
 
-## Author
-FAID – [GitHub](https://github.com/faidrn)
+Open your browser at:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 📚 Learning Goals
+
+This project is useful if you want to learn:
+
+- How to build an ecommerce with Next.js
+- Client-side state management for carts
+- API consumption in React apps
+- Authentication and protected flows
+- Structuring a scalable frontend project
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Open a pull request
+
+---
+
+## 📄 License
+
+This project is open source and available under the **MIT License**.
+
